@@ -81,6 +81,6 @@ The operations:
 
 ### See Also
 
-**Design Doc:** [doc](https://docs.google.com/document/d/1kksm8aa5HpCph5NmJEwrCrj2e3p85RORQCr7OSsWAOs/edit#heading=h.w4xnn01mqy78)
+**Design Doc:** [doc](https://docs.google.com/document/d/1kksm8aa5HpCph5NmJEwrCrj2e3p85RORQCr7OSsWAOs/edit?usp=sharing)
 
 **Issue:** [1133390](https://crbug.com/1133390)
