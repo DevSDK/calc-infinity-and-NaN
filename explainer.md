@@ -32,7 +32,7 @@ The operations:
 1. **\<length> and \<length-percentage>**
     ```CSS
     div {
-        width:clac(infinity*1px);
+        width:calc(infinity*1px);
         height:10px;
         background-color:green;
     }
@@ -42,7 +42,7 @@ The operations:
      
      In case of NaN:
      ``` CSS
-        width:clac(NaN*1px);
+        width:calc(NaN*1px);
      ```
      The value will be a maximum value(≈3.35544e+07) of computed style to indicate infinity.
 
@@ -58,7 +58,7 @@ The operations:
      
      In case of NaN:
      ``` CSS
-        animation-duration:clac(NaN*1s);
+        animation-duration:calc(NaN*1s);
      ```
      The value will be a maximum value(≈3.35544e+07) of computed style to indicate infinity.
 
