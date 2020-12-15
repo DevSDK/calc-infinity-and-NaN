@@ -38,13 +38,13 @@ The operations:
     }
     ```
     
-    This case div's computed width will be a maximum value(≈1.79769e+308) of double type.
+    This case div's computed width will be a maximum value(≈3.35544e+07) of computed style.
      
      In case of NaN:
      ``` CSS
         width:clac(NaN*1px);
      ```
-     The value will be a maximum value(≈1.79769e+308) of double to indicate infinity.
+     The value will be a maximum value(≈3.35544e+07) of computed style to indicate infinity.
 
 2. **\<time>**
    ```CSS
@@ -53,16 +53,16 @@ The operations:
         animation-name: SomeAnimation;
     }
    ```
-    This case div's computed duration will be maximum value(≈1.79769e+308) of double type.
+    This case div's computed duration will be maximum value(≈3.35544e+07) of computed style.
     
      
      In case of NaN:
      ``` CSS
         animation-duration:clac(NaN*1s);
      ```
-     The value will be a maximum value(≈1.79769e+308) of double to indicate infinity.
+     The value will be a maximum value(≈3.35544e+07) of computed style to indicate infinity.
 
-3. **\<angle>**
+3. **\<angle>** : Under discusssion
    ```CSS
     div {
         transform: rotate(calc(infinity*1deg));
@@ -73,7 +73,7 @@ The operations:
         transform: rotate(calc(NaN*1deg));
     }
    ```
-    This case div's computed rotation will be 0 for infinity, -infinity and NaN by clamping.
+   Work In Progress.
 
 4. **Interpolation** : WIP
     
