@@ -25,6 +25,9 @@ The operations:
 ## Implementation aspect
 
  All of the values evaluated in infinity or NaN should be clamped to ideal finite values before consuming to components.
+ 
+ According to the [spec](https://www.w3.org/TR/css-values-4/#top-level-calculation), It says "If a top-level calculation (a math function not nested inside of another math function) would produce a value whose numeric part is NaN, it instead act as though the numeric part is +∞."
+    Therefore NaN will be calculated as positive infinity.
 
 ## Examples
  Below infinity and NaN could be evaluated by the expression such as Zero Division. The result of using the expression and keywords is identical.
@@ -37,14 +40,15 @@ The operations:
         background-color:green;
     }
     ```
-    
+
     This case div's computed width will be a maximum value(≈3.35544e+07) of computed style.
      
      In case of NaN:
      ``` CSS
         width:calc(NaN*1px);
      ```
-     The value will be a maximum value(≈3.35544e+07) of computed style to indicate infinity.
+    
+    The value will be a maximum value(≈3.35544e+07) of computed style to indicate positive infinity. 
 
 2. **\<time>**
    ```CSS
@@ -54,8 +58,7 @@ The operations:
     }
    ```
     This case div's computed duration will be maximum value(≈3.35544e+07) of computed style.
-    
-     
+
      In case of NaN:
      ``` CSS
         animation-duration:calc(NaN*1s);
@@ -63,21 +66,21 @@ The operations:
      The value will be a maximum value(≈3.35544e+07) of computed style to indicate infinity.
 
 3. **\<angle>** : Under discusssion
-   ```CSS
-    div {
-        transform: rotate(calc(infinity*1deg));
-    }
-   ```
     ```CSS
-    div {
-        transform: rotate(calc(NaN*1deg));
-    }
-   ```
+        div {
+            transform: rotate(calc(infinity*1deg));
+        }
+    ```
+    ```CSS
+        div {
+            transform: rotate(calc(NaN*1deg));
+        }
+    ```
    Work In Progress.
 
 4. **Interpolation** : WIP
     
-    Strictly followed the spec, It's interpolated by enormous clamped values. However, this may need discussion. 
+    Strictly followed the spec, It's interpolated by enormous clamped values. However, We guess this works is not ideal. this may need discussion.
 
 ### See Also
 
