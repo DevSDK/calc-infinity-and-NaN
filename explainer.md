@@ -65,7 +65,7 @@ The operations:
      ```
      The value will be a maximum value(≈3.35544e+07) of computed style to indicate infinity.
 
-3. **\<angle>** : Under discusssion
+3. **\<angle>**
     ```CSS
         div {
             transform: rotate(calc(infinity*1deg));
@@ -76,7 +76,8 @@ The operations:
             transform: rotate(calc(NaN*1deg));
         }
     ```
-   Work In Progress.
+
+    In this case, the calc produces for \<angle> is a specific constant value (2867080569122160) which is the nearest calculatable double maximum value in the current implementation.  Details are explained in design docs. Please see below.
 
 4. **Interpolation** : WIP
     
