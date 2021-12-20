@@ -41,14 +41,14 @@ The operations:
     }
     ```
 
-    This case div's computed width will be a maximum value(≈3.35544e+07) of computed style.
-     
+    The maximum value will be calculated by [INT_MAX / kFixedPointDenominator](https://source.chromium.org/chromium/chromium/src/+/main:third_party/blink/renderer/platform/geometry/layout_unit.h;l=61-62;drc=5a482950b21c31f5d80b7809ca248a94dea0e0d2) / [zoom factor](https://source.chromium.org/chromium/chromium/src/+/main:third_party/blink/renderer/core/layout/adjust_for_absolute_zoom.h;l=67;drc=a820f380187c1c0ddaf645e5e71f914a12653a7e) (≈ 3.35544e+07 if zoom factor is 1).
+
+    This case div's computed width will be a maximum value of computed style.
      In case of NaN:
      ``` CSS
         width:calc(NaN*1px);
      ```
-    
-    The value will be a maximum value(≈3.35544e+07) of computed style to indicate positive infinity. 
+    The value will be a maximum value of computed style to indicate positive infinity.
 
 2. **\<time>**
    ```CSS
@@ -57,13 +57,13 @@ The operations:
         animation-name: SomeAnimation;
     }
    ```
-    This case div's computed duration will be maximum value(≈3.35544e+07) of computed style.
+    This case div's computed duration will be maximum value(≈1.79769e+308s) of computed style.
 
      In case of NaN:
      ``` CSS
         animation-duration:calc(NaN*1s);
      ```
-     The value will be a maximum value(≈3.35544e+07) of computed style to indicate infinity.
+     The value will be a maximum value(≈1.79769e+308s) of computed style to indicate infinity.
 
 3. **\<angle>**
     ```CSS
@@ -78,10 +78,6 @@ The operations:
     ```
 
     In this case, the calc produces for \<angle> is a specific constant value (2867080569122160) which is the nearest calculatable double maximum value in the current implementation.  Details are explained in design docs. Please see below.
-
-4. **Interpolation** : WIP
-    
-    Strictly followed the spec, It's interpolated by enormous clamped values. However, We guess this works is not ideal. this may need discussion.
 
 ### See Also
 
